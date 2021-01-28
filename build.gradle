@@ -13,10 +13,13 @@ repositories {
 }
 
 dependencies {
+	//spring
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//h2 database
+	runtimeOnly 'com.h2database:h2'
 
 	//lombok
 	compileOnly 'org.projectlombok:lombok:1.18.16'
