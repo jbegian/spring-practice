@@ -5,12 +5,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
-@Builder
 @Entity
+@Builder
+@AllArgsConstructor
+@Setter
+@Getter
+@ToString
 public class User {
 
     @Id
@@ -19,4 +25,8 @@ public class User {
     private final String name;
     private final String email;
     
+    public User() {
+        this.name = "";
+        this.email = "";
+    }
 }
