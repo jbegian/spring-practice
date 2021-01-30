@@ -5,6 +5,9 @@ import java.util.List;
 import com.exercise.springpractice.model.User;
 import com.exercise.springpractice.repository.UserRepository;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class UserService {
 
     private final UserRepository userRepository;
