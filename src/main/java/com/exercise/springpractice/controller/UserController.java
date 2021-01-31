@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
@@ -29,6 +32,7 @@ public class UserController {
 
     @PostMapping("/users")
     public ResponseEntity<User> addUser(@RequestBody User user) {
+        log.info("Add User To Database: {}", user);
         return ResponseEntity.ok(userService.createUser(user));
     }
 }
