@@ -3,6 +3,8 @@ package com.exercise.springpractice.service;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
@@ -38,8 +40,9 @@ public class UserServiceTest {
                 User.builder().id(2).name("name").email("email").build());
 
         when(userRepository.findAll()).thenReturn(users);
-
-        assertEquals(2, userService.findAllUsers().size());
+        assertAll(
+            () -> assertEquals(2, userService.findAllUsers().size()),
+            () -> verify(userRepository, times(1)).findAll());
     }
     
     @Test
@@ -51,6 +54,7 @@ public class UserServiceTest {
 
         assertAll(
             () -> assertEquals(expectedUser.getName(), actualUser.getName()),
-            () -> assertEquals(expectedUser.getEmail(), actualUser.getEmail()));
+            () -> assertEquals(expectedUser.getEmail(), actualUser.getEmail()),
+            () -> verify(userRepository, times(1)).save(any(User.class)));
     }
 }
