@@ -28,5 +28,5 @@ Practice exercise provided via Baledung - [Building a Web Application with Sprin
 - To run backend - `./gradlew bootRun` OR run utilizing editors runner/debugger
   - **NOTE** - If utilizing gradle to run project, ensure you are in project root folder
   - Backend runs on `localhost:8080`
-- To run frontend - ng serve -o from `spring-practice\src\main\angular\client` directory
+- To run frontend - `ng serve -o` from `spring-practice\src\main\angular\client` directory
   - Frontend runs on `localhost:4200`
